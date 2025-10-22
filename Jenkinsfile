@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "myapp"          // Change to your app name
-        IMAGE_TAG = "latest"          // You can also use: "${env.BUILD_NUMBER}" or git commit SHA
+        IMAGE_NAME = "myapp"   
+	IMAGE_TAG = "latest"
         CONTAINER_NAME = "myapp_container"
     }
 
