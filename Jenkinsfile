@@ -31,8 +31,8 @@ pipeline {
                     // Stop old container if running
                     sh """
                     if [ \$(docker ps -aq -f name=${CONTAINER_NAME}) ]; then
-    			docker rm -f ${CONTAINER_NAME}
-		    fi
+    					docker rm -f ${CONTAINER_NAME}
+		    		fi
 			docker run -d --name ${CONTAINER_NAME} -p 8000:8000 ${IMAGE_NAME}:${IMAGE_TAG}
                     """
                 }
