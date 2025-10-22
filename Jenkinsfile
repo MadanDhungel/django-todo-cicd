@@ -30,11 +30,10 @@ pipeline {
                 script {
                     // Stop old container if running
                     sh """
-                    if [ \$(docker ps -q -f name=${CONTAINER_NAME}) ]; then
-                        docker stop ${CONTAINER_NAME}
-                        docker rm ${CONTAINER_NAME}
-                    fi
-                    docker run -d --name ${CONTAINER_NAME} -p 8000:8000 ${IMAGE_NAME}:${IMAGE_TAG}
+                    if [ \$(docker ps -aq -f name=${CONTAINER_NAME}) ]; then
+    			docker rm -f ${CONTAINER_NAME}
+		    fi
+			docker run -d --name ${CONTAINER_NAME} -p 8000:8000 ${IMAGE_NAME}:${IMAGE_TAG}
                     """
                 }
             }
