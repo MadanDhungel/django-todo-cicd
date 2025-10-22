@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = "myapp"   
-	IMAGE_TAG = "latest"
+		IMAGE_TAG = "latest"
         CONTAINER_NAME = "myapp_container"
     }
 
